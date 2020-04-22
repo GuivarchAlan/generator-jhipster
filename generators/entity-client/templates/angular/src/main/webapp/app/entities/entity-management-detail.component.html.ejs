@@ -1,15 +1,11 @@
 <%#
  Copyright 2013-2020 the original author or authors from the JHipster project.
-
  This file is part of the JHipster project, see https://www.jhipster.tech/
  for more information.
-
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
-
       http://www.apache.org/licenses/LICENSE-2.0
-
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -105,14 +101,18 @@
                 }
                 _%>
             </dl>
-
+	    <dt>QrCode</dt>
+                <dd>
+                    <div>
+                        <qr-code [value]="'/<%= entityUrl %>/<%= entityInstance %>.id/view'" [size]="150"></qr-code>
+                    </div>
+                </dd>
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
                 <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
             </button>
             <%_ if (!readOnly) { _%>
-
             <button type="button"
                     [routerLink]="['/<%= entityUrl %>', <%= entityInstance %>.id, 'edit']"
                     class="btn btn-primary">
